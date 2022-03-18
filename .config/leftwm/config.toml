@@ -1,0 +1,47 @@
+modkey = "Mod4"
+workspaces = []
+layouts = [
+  "MainAndDeck",
+  "MainAndVertStack",
+  "MainAndHorizontalStack",
+  "GridHorizontal",
+  "EvenHorizontal",
+  "EvenVertical",
+  "Fibonacci",
+  "CenterMain",
+  "CenterMainBalanced",
+  "Monocle",
+  "RightWiderLeftStack",
+  "LeftWiderRightStack",
+]
+focus_behavior = "ClickTo"
+focus_new_windows = true
+
+
+[[keybind]]
+command = "Execute"
+value = "alacritty"
+modifier = ["modkey"]
+key = "Return"
+
+[[keybind]]
+command = "Execute"
+value = "~/.config/leftwm/themes/Atrocious/rofi-applauncher.sh"
+modifier = ["modkey"]
+key = "p"
+
+[[keybind]]
+command = "Execute"
+value = "~/.config/leftwm/themes/Atrocious/rofi-powermenu.sh"
+modifier = ["modkey"]
+key = "l"
+
+[[keybind]]
+command = "CloseWindow"
+modifier = ["modkey"]
+key = "q"
+
+[[keybind]]
+command = "ToggleFloating"
+modifier = ["modkey"]
+key = "f"

@@ -1,0 +1,21 @@
+#!/bin/bash
+export SCRIPTPATH="$(cd "$(dirname "$0")" ; pwd -P)"
+
+$SCRIPTPATH/down
+
+if [ -x "$(command -v picom)" ]; then
+  picom &> /dev/null &
+fi
+
+# set the theme.toml
+leftwm command "LoadTheme $SCRIPTPATH/theme.toml"
+
+# set background
+if [ -x "$(command -v feh)" ]; then
+  $HOME/.fehbg
+fi
+
+# bottom bar
+if [ -x "$(command -v polybar)" ]; then
+  polybar -c "$SCRIPTPATH/polybar.config" primary &> /dev/null &
+fi

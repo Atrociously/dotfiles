@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-fill '/mnt/epoch/jack/trunk/backgrounds/demon_slayer_obanai_iguro.jpg' 

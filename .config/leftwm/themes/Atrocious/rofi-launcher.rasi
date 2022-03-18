@@ -1,0 +1,138 @@
+configuration {
+	  font:           "FiraCode Nerd Font 10";
+    show-icons:     true;
+    display-drun:   "";
+    display-window: "";
+    modi:           [window,run,ssh,drun];
+    combi-modi:     [window,drun];
+}
+
+/**
+ * Base16 Chalk ROFI Color theme
+ *
+ * Authors
+ *  Scheme: Chris Kempson (http://chriskempson.com)
+ *  Template: Jordi Pakey-Rodriguez (https://github.com/0xdec), Andrea Scarpino (https://github.com/ilpianista)
+ */
+
+* {
+    red:                         rgba ( 251, 159, 177, 100 % );
+    blue:                        rgba ( 111, 194, 239, 100 % );
+    lightfg:                     rgba ( 224, 224, 224, 100 % );
+    lightbg:                     rgba ( 32, 32, 32, 100 % );
+    foreground:                  rgba ( 208, 208, 208, 100 % );
+    background:                  rgba ( 21, 21, 21, 100 % );
+    background-color:            rgba ( 21, 21, 21, 100 % );
+    text-color:                  @foreground;
+    separatorcolor:              @foreground;
+    border-color:                @foreground;
+    selected-normal-foreground:  @lightbg;
+    selected-normal-background:  @lightfg;
+    selected-active-foreground:  @background;
+    selected-active-background:  @blue;
+    selected-urgent-foreground:  @background;
+    selected-urgent-background:  @red;
+    normal-foreground:           @foreground;
+    normal-background:           @background;
+    active-foreground:           @blue;
+    active-background:           @background;
+    urgent-foreground:           @red;
+    urgent-background:           @background;
+    alternate-normal-foreground: @foreground;
+    alternate-normal-background: @lightbg;
+    alternate-active-foreground: @blue;
+    alternate-active-background: @lightbg;
+    alternate-urgent-foreground: @red;
+    alternate-urgent-background: @lightbg;
+}
+
+window {
+    transparency:     "real";
+    background-color: @background;
+    text-color:       @foreground;
+    border:           1px;
+    border-radius:    10px;
+    width:			      12%;
+    location:         southwest;
+    x-offset:         0.5%;
+    y-offset:         -2%;
+}
+
+prompt {
+    enabled: 					true;
+	  padding: 					10px;
+	  background-color: @foreground;
+    text-color:       @background;
+	  font:							"FiraCode Nerd Font 10";
+}
+
+entry {
+    background-color:  @foreground;
+    text-color:        @background;
+    placeholder-color: @background;
+    expand:            true;
+    horizontal-align:  0;
+    placeholder:       "Search...";
+    padding:           10px 10px 10px 0px;
+    border-radius:     0px;
+    blink:             true;
+}
+
+inputbar {
+	children: 						[ prompt, entry ];
+    background-color:               @foreground;
+    text-color:                     @foreground;
+    expand:                         false;
+    border-radius:                  12px;
+    spacing:                        0px;
+}
+
+listview {
+    background-color:               @background;
+    padding:                        0px;
+    columns:                        1;
+    lines:                          8;
+    spacing:                        5px;
+    cycle:                          true;
+    dynamic:                        true;
+    layout:                         vertical;
+}
+
+mainbox {
+    background-color:               @background;
+	border:							0px;
+    border-radius:                  0px;
+	border-color:					@foreground;
+    children:                       [ inputbar, listview ];
+    spacing:                       	10px;
+    padding:                        10px 10px 10px 10px;
+}
+
+element {
+    background-color:               @background;
+    text-color:                     @foreground;
+	border-color:					@background;
+    orientation:                    horizontal;
+    border-radius:                  0px;
+    padding:                        8px;
+}
+
+element-icon {
+    size:                           24px;
+    border:                         0px;
+}
+
+element-text {
+    expand:                         true;
+    horizontal-align:               0;
+    vertical-align:                 0.5;
+    margin:                         0px 2.5px 0px 2.5px;
+}
+
+element selected {
+    background-color:               @background;
+    text-color:                     @foreground;
+	border:							2px;
+    border-radius:                  12px;
+    border-color:                  	@foreground;
+}
