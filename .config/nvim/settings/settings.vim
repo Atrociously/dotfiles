@@ -1,6 +1,9 @@
 " disable vi compatibility we don't need it
 set nocompatible
 
+" set term gui colors for better coloring
+set termguicolors
+
 " set better mouse integration
 set mouse=a
 
