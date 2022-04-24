@@ -36,7 +36,4 @@ Plug 'numToStr/Comment.nvim'
 " add catppuccin theme
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 
-" add lsp saga a nice ui for naitive lsp
-Plug 'glepnir/lspsaga.nvim'
-
 call plug#end()

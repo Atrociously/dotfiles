@@ -12,7 +12,7 @@ leftwm command "LoadTheme $SCRIPTPATH/theme.toml"
 
 # set background
 if [ -x "$(command -v feh)" ]; then
-  $HOME/.fehbg
+  feh --bg-fill $SCRIPTPATH/background.jpg
 fi
 
 # bottom bar

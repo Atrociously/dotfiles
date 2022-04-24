@@ -38,14 +38,14 @@ colors:
 font:
   size: 10
   normal:
-    family: MesloLGS NF
+    family: FuraMono Nerd Font
     style: Regular
   bold:
-    family: MesloLGS NF
+    family: FuraMono Nerd Font
     style: Bold
   italic:
-    family: MesloLGS NF
-    style: Italic
+    family: FuraMono Nerd Font
+    style: Medium
 window:
   opacity: 0.85
 env:

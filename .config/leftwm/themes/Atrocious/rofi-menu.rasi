@@ -1,5 +1,5 @@
 configuration {
-	font:							"FiraCode Nerd Font 10";
+	font:							"FuraMono Nerd Font 10";
     display-run: 					"";
     drun-display-format:            "{name}";
 }

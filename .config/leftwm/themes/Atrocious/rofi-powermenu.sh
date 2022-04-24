@@ -14,9 +14,7 @@ rofi_menu="rofi -location 5 -theme $SCRIPTPATH/rofi-menu.rasi -dmenu"
 shutdown=" Shutdown"
 reboot=" Restart"
 lock=" Lock"
-suspend=" Sleep"
-logout=" Logout"
-options="$lock\n$suspend\n$logout\n$reboot\n$shutdown"
+options="$lock\n$reboot\n$shutdown"
 
 # initailize confirmation variables and create function for running confirmation menu
 confirm_yes="Yes"
@@ -31,7 +29,7 @@ case $chosen in
     $shutdown)
         ans=$(confirm_exit &)
         if [[ $ans == $confirm_ans ]]; then
-            systemctl poweroff
+            loginctl poweroff
         else
             exit 0
         fi
@@ -40,7 +38,7 @@ case $chosen in
         echo "reboot"
         ans=$(confirm_exit &)
         if [[ $ans == $confirm_yes ]]; then
-            systemctl reboot
+            loginctl reboot
         else
             exit 0
         fi
@@ -49,25 +47,7 @@ case $chosen in
         echo "lock"
         ans=$(confirm_exit &)
         if [[ $ans == $confirm_yes ]]; then
-            dm-tool lock
-        else
-            exit 0
-        fi
-        ;;
-    $suspend)
-        echo "suspend"
-        ans=$(confirm_exit &)
-        if [[ $ans == $confirm_yes ]]; then
-            systemctl suspend
-        else
-            exit 0
-        fi
-        ;;
-    $logout)
-        echo "logout"
-        ans=$(confirm_exit &)
-        if [[ $ans == $confirm_yes ]]; then
-            bspc quit
+            loginctl lock-sessions
         else
             exit 0
         fi
